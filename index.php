@@ -3,13 +3,14 @@
 
 // variable with Poke API and value from input
 $url = 'https://pokeapi.co/api/v2/pokemon/' . $_GET['value']; // Pokemon API url + search
-$poke_json = file_get_contents($url); // to get data from API
+$url2 = 'https://pokeapi.co/api/v2/pokemon-species/' . $_GET['value']; // Pokemon API url + search
+$poke_json = file_get_contents($url, $url2); // to get data from API
 $result_array = json_decode($poke_json , true); // 'true' converts objects into associative arrays
 
-
+//https://pokeapi.co/api/v2/pokemon-species/
 // Pokemon variable
 $name = $result_array['name'];
-
+$name1 = $result_array['name'];
 // Display
 var_dump($name);
 
@@ -35,7 +36,8 @@ var_dump($name);
 <img src=" <?php echo $result_array['sprites']['front_default'];?>" />
 <form name="form" action="" method="get"   >
     <input type="text" name="value">
-    <button type="submit" ></button
+    <button type="submit" ></button>
+    <h1><?php echo $result_array['evolves_to']['0']['species']['name']; ?></h1>
     <ul>
         <li><?php echo $result_array['moves']['0']['move']['name']; ?></li>
         <li><?php echo $result_array['moves']['1']['move']['name']; ?></li>
