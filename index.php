@@ -30,10 +30,15 @@ var_dump($name);
     <title>Document</title>
 </head>
 <body>
+
 <img src=" <?php echo $result_array['sprites']['front_default'];?>" />
 <form name="form" action="" method="get"   >
     <input type="text" name="value">
     <button type="submit" ></button
+    <tr>
+        <td><?php echo $result_array['moves']['0']['move']['name']; ?></td>
+
+    <tr>
 </form>
 </body>
 </html>
