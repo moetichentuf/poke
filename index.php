@@ -1,5 +1,6 @@
 
 <?php
+
 // variable with Poke API and value from input
 $url = 'https://pokeapi.co/api/v2/pokemon/' . $_GET['value']; // Pokemon API url + search
 $poke_json = file_get_contents($url); // to get data from API
@@ -35,10 +36,14 @@ var_dump($name);
 <form name="form" action="" method="get"   >
     <input type="text" name="value">
     <button type="submit" ></button
-    <tr>
-        <td><?php echo $result_array['moves']['0']['move']['name']; ?></td>
+    <ul>
+        <li><?php echo $result_array['moves']['0']['move']['name']; ?></li>
+        <li><?php echo $result_array['moves']['1']['move']['name']; ?></li>
+        <li><?php echo $result_array['moves']['2']['move']['name']; ?></li>
+        <li><?php echo $result_array['moves']['3']['move']['name']; ?></li>
 
-    <tr>
+
+    </ul>
 </form>
 </body>
 </html>
